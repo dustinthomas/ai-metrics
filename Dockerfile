@@ -24,5 +24,8 @@ RUN npm install
 # Copy the rest of the project
 COPY . .
 
+# Build dist for standalone cli use
+RUN npm run build
+
 # Default command runs the dev script (override as needed)
 CMD ["npm", "run", "dev"]

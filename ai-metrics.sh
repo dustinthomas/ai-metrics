@@ -15,11 +15,11 @@ if ! docker image inspect "$IMAGE" >/dev/null 2>&1; then
   docker build -t "$IMAGE" . --quiet
 fi
 
-# Pass through all args
+# Pass through all args. Build inside (host mount overrides image dist)
 docker run --rm \
   -v "$(pwd)":/app \
   -v /app/node_modules \
   -v "$GROK_LOGS":/root/.grok:ro \
   -v "$DATA_DIR":/root/.ai-metrics \
   "$IMAGE" \
-  node dist/src/cli.js "$@"
+  sh -c 'npm run build > /dev/null && node dist/src/cli.js "$@"' -- "$@"
