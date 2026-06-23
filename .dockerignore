@@ -1,0 +1,19 @@
+# Root .dockerignore
+node_modules
+npm-debug.log
+.git
+.gitignore
+*.md
+Dockerfile*
+docker-compose*
+.dockerignore
+dist
+build
+.vscode
+.idea
+*.swp
+*~
+
+# Keep tests/ for vitest inside image
+# tests/   # uncomment to exclude if desired
+

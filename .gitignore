@@ -1,0 +1,31 @@
+# Local environment / secrets
+.local
+.env.local
+.env
+*.token
+gh_token
+github_token
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Julia (if any at root)
+Manifest.toml
+
+# Build / node
+node_modules/
+dist/
+package-lock.json
+
+# ai-metrics runtime data (never commit)
+.ai-metrics/
+
+# Julia if present
+Manifest.toml
